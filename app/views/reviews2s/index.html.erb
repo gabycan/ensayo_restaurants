@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reviews2s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Restaurant2s</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reviews2s.each do |reviews2| %>
+      <tr>
+        <td><%= reviews2.content %></td>
+        <td><%= reviews2.restaurant2s_id %></td>
+        <td><%= link_to 'Show', reviews2 %></td>
+        <td><%= link_to 'Edit', edit_reviews2_path(reviews2) %></td>
+        <td><%= link_to 'Destroy', reviews2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reviews2', new_reviews2_path %>
